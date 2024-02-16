@@ -1,0 +1,20 @@
+{
+  "name": "jsondblite",
+  "version": "1.0.0",
+  "description": "The **jsonDB** library provides an easy way to work with JSON data as a database.",
+  "main": "jsonClass.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "",
+    "git": ""
+  },
+  "keywords": ["json", "database", "data", "api", "http"],
+  "author": "Daniel Uretsky",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^9.0.1"
+  }
+}
+
