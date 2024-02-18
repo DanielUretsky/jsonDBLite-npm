@@ -1,7 +1,7 @@
-# What is jsonDBLite?
-The **jsonDBLite** library provides an easy way to work with JSON data as a database.
+# What is jsonDBKit?
+The **jsonDBKit** library provides an easy way to work with JSON data as a database.
 
-## Why jsonDBLite?
+## Why jsonDBKit?
 - Easy to use.
 - An easy way to implement a simple database into your project.
 - The JSON file serves as the database.
@@ -51,11 +51,11 @@ The **jsonDBLite** library provides an easy way to work with JSON data as a data
   
 ## First steps (My example)
 
-To install the `jsondblite` library, run the following command:
+To install the `jsondbkit` library, run the following command:
 
 
 ```bash
-npm install --save jsondblite
+npm install --save jsondbkit
 ```
 1.  Create folder for your database:
    
@@ -130,7 +130,7 @@ npm install --save jsondblite
 
    I moved the function to a separate file:
     ```js
-    const jsonDB = require('jsondblite');
+    const jsonDB = require('jsondbkit');
 
 
     const connectToJsonDB = () => {
@@ -156,35 +156,36 @@ npm install --save jsondblite
     const usersDLL = require('../DLL/usersDLL');
 
     router.get('/', async(req, res) => {
-        let response = await usersDLL.getAllUsers();
+        const response = await usersDLL.getAllUsers();
 
         res.send(response);
     });
 
     router.get('/:id', async(req, res) => {
         const id = req.params.id;
-        let response = await usersDLL.getOneUser(id);
+        const response = await usersDLL.getOneUser(id);
 
         res.send(response);
     });
 
     router.post('/', async(req, res) => {
         const obj = req.body;
-        let response = await usersDLL.addNewUser(obj);
+        const response = await usersDLL.addNewUser(obj);
+        
         res.send(response);
     });
 
     router.put('/:id', async(req, res) => {
-        let id = req.params.id;
-        let obj = req.body;
-        let response = await usersDLL.updateUser(id, obj);
+        const id = req.params.id;
+        const obj = req.body;
+        const response = await usersDLL.updateUser(id, obj);
 
         res.send(response);
     });
 
     router.delete('/:id', async(req, res) => {
         const id = req.params.id;
-        let response = await usersDLL.deleteUser(id);
+        const response = await usersDLL.deleteUser(id);
 
         res.send(response);
     });
@@ -197,7 +198,7 @@ npm install --save jsondblite
    ![](./images/BLLFolder.png)
 
    ```js
-    const jsonDB = require('jsondblite');
+    const jsonDB = require('jsondbkit');
 
     const getAllUsers = async () => {
         return jsonDB.jsonGetCollection("users");
