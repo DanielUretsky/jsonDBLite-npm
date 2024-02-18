@@ -46,11 +46,7 @@ class jsonDB {
 
                 const expectedSchema = jsonDB.#DBSchema.DBCollectionsSchema[collectionName][currentKey];
                 const currentContent = content[currentKey];
-
-                console.log('currentKey:', currentKey);
-                console.log('currentContent =>', currentContent);
-                console.log('expectedSchema =>', expectedSchema);
-                
+           
                 if (typeof expectedSchema === 'object' && expectedSchema !== null && !Array.isArray(expectedSchema)) {
                     if (!classUtils.checkContentDeeply(currentContent, expectedSchema)) {
                         throw new Error(`Invalid datatypes in nested object for key => ${currentKey}`);
